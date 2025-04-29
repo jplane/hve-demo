@@ -22,8 +22,6 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
     - a REST API backend configured as a tool for AI Foundry agents to process natural language requests
     - an HVAC controller used by the REST API to implement HVAC behaviors
 
-    Don't create a plan for this work.
-
 ### Generating natural language intents from envisioning notes
 
   _Copilot prompt:_
@@ -31,8 +29,6 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
     From the envisioning notes, identify 25 key natural language examples that represent the desired functionality, and write those to `docs/intents.txt`. Be creative with the examples, but ensure they are realistic and relevant to the HVAC system.
     
     Write only the natural language phrases, one per line, expressed as imperative commands. Do not use quotes or other text elements.
-
-    Don't create a plan for this work.
 
 ### Generating an API spec
 
@@ -42,7 +38,7 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
     
     Parameterize rooms and locations, temperature, time ranges, etc. Prefer PUT over POST when updating values.
     
-    Write the spec to `docs/api.json`. Don't create a plan for this work.
+    Write the spec to `docs/api.json`.
 
 ### Generating an eval dataset
 
@@ -51,8 +47,6 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
     Create a file `docs/dataset.jsonl`. For each line in `docs/intents.txt` add a line to `docs/dataset.jsonl`.
     
     Each new line in `docs/dataset.jsonl` should be JSON content conforming to `docs/dataset_template.json` and containing the original intent text and the endpoint details (names, argument values, etc.) needed to fulfill the intent against the spec in `docs/api.json`.
-
-    Don't create a plan for this work.
 
 ### Start Azure AI Foundry eval run
 
@@ -65,18 +59,12 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
 ### Generating REST API code
 
   _Copilot prompt:_
-
-    Create a plan to do the following:
     
-    - Generate a Python Flask REST API and dependent code and configuration based on the OpenAPI 3.0 spec in `docs/api.json`. Use only the existing modules in `src/api/requirements.txt`.
+    Generate a Python Flask REST API and dependent code and configuration based on the OpenAPI 3.0 spec in `docs/api.json`. Use only the existing modules in `src/api/requirements.txt`.
     
-    - Create a simple `src/api/app.py` entrypoint and `src/api/controllers.py` with an implementation of the endpoint behaviors that maintains system state in-memory. Keep all generated code in these files, don't create additional folders or code files.
+    Create a simple `src/api/app.py` entrypoint and `src/api/controllers.py` with an implementation of the endpoint behaviors that maintains system state in-memory. Keep all generated code in these files, don't create additional folders or code files.
     
     Ensure SwaggerUI support is configured. The generated code should be a complete, working implementation of the OpenAPI spec. Ensure the code will work with the existing Dockerfile.
-
-    Only create the plan, don't write any code.
-
-  _(followup with subsequent prompts to implement each phase of the generated plan)_
 
 ### Local API testing
 
