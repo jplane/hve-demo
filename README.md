@@ -50,7 +50,7 @@ The narrative below describes ISE's Hypervelocity Engineering process for using 
 
 ### Start Azure AI Foundry eval run
 
-  _(run [eval](../src/evals/eval.ipynb) notebook)_
+  _(run [eval](./src/evals/eval.ipynb) notebook)_
 
 ### Review eval results
 
