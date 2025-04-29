@@ -1,0 +1,13 @@
+azure-ai-projects
+azure-identity
+azure-ai-inference
+azure-ai-evaluation[remote]
+azure-identity
+azure-ai-ml
+pandas
+python-dotenv
+jsoncomparison
+ipykernel
+python-dotenv
+openai
+jsonref

@@ -1,0 +1,9 @@
+You should generate an array of function call metadata for the specified API spec, in the expected format.
+
+API spec:
+##swagger_spec##
+
+Expected JSON array format:
+[{"function": "function1", "args": { "arg1": "value1", "arg2": "value2" } }]
+
+It is very important that you produce a single JSON array as output, conforming to the above format. Do not include any extra JSON elements or text.

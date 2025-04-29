@@ -1,0 +1,30 @@
+{
+	"name": "ComfortAI HVE Demo",
+
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+
+	"postCreateCommand": "bash .devcontainer/install_dependencies.sh",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"bierner.markdown-mermaid",
+				"ms-azuretools.vscode-azureresourcegroups",
+				"ms-azuretools.vscode-azurecontainerapps",
+				"teamsdevapp.vscode-ai-foundry",
+				"mhutchie.git-graph"
+			]
+		}
+	},
+
+	"forwardPorts": [8000]
+}
